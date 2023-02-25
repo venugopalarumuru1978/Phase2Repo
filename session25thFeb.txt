@@ -1,0 +1,97 @@
+How to send values from html page to servlet page:- 
+--------------------------------------------------
+1.  Create an html page and design it as per the requirement. 
+	html page should exist <form> tag with method "POST" and action="servletname"
+2.  html page must be have "submit" button. 
+3.  Create a servlet and that servlet name assign to "action" part in html page.
+4.  To get values from html page to servlet, use following statement
+		variable = request.getParameter("toolname")
+----------------------------------------------------------------
+
+How to navigate from Servlet page to another servlet/html pages
+
+responseObj.sendRedirect("htmlpage/servletpage");
+-----------------------------
+Example :- Login Process :- 
+---------------------------
+1.  Create following html pages 
+	Login.html
+	Welcome.html
+	Error.html
+2.  Code the above html pages as per the requirement
+3.  Create a servlet "Login.java" then write the functionality by getting values from login.html. 
+---------------------------------------------------------
+State Management :- 
+-------------------
+Managing the state of the user is called as state management.
+
+Actually Every web page is a stateless page, i.e. once we move forward from one page to another page, the previous page will be expired after certain time from client system. 
+
+to manage the state of the user, 
+
+1. Session
+2. Cookies
+3. QueryString
+--------------------------------
+Session :- 
+
+whenever we send any request to the server, server recieves that request then it allowcates a block of memory for that client in server, that memory is called as "Session Memory". 
+
+Session is  a serverside statement management. 
+
+HttpSession :- it is the class is used to identify session memory. 
+
+getSession() :-  this method capture of sesion memory and stores into HttpSession Object. 
+
+setAttribute(key, value) :-  to store value  into session.
+getAttribute(key) :-  to retrive value from session. 
+getId() :- to display session id.
+------------------------
+QueryString :-  it is one of the state management where it allows to send data to any particular page along with url. it is also called as "URL Redirecting". 
+
+Step 1 :-resonse.sendRedirect("pagename?variable=value");
+Step 2 :-  In target page,  get value from url, as follows
+		request.getParameter("variable")
+-------------
+Cookie
+A cookie is a small piece of information that is persisted between the multiple client requests.
+Types of Cookie
+There are 2 types of cookies in servlets.
+Non-persistent cookie
+Persistent cookie
+Non-persistent cookie
+It is valid for single session only. It is removed each time when user closes the browser.
+
+Persistent cookie
+It is valid for multiple session . It is not removed each time when user closes the browser. It is removed only if user logout or signout.
+
+Cookie Class:- it is used to create a cookie with a value.
+
+Cookie <cookieObj> = new Cookie(key, value);
+response.addCookie(cookieObj) :- it is used to add cookies to the browser. 
+
+to get value from cookies "getCookies()" method is used and it returns Array of "Cookies[]" class. 
+
+setMaxAge(time in milli seconds) :- it allows to set time for storing cookie into browser memory. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
