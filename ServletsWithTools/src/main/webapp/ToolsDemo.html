@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form name="frmReg"  method="POST"  action="RegServlet">
+	<table width="50%" border="1">
+		<tr>
+			<td width="30%">Person Name : </td>
+			<td width="70%"><input type="text" name="txtPname" /></td>
+		</tr>
+		<tr>
+			<td>Gender : </td>
+			<td>
+			<input type="radio" name="rdoGender" value="Male"/> Male
+			<input type="radio" name="rdoGender" value="Female"/> Female
+			</td>
+		</tr>
+		<tr>
+		<td>Hobbies</td>
+			<td>
+			<input type="checkbox"  name="chk1"  value="G" />Gardening
+			<br />
+			<input type="checkbox"  name="chk2"  value="P" />Playing Chess
+			<br />
+			<input type="checkbox"  name="chk3"  value="R" />Reading Books
+			</td>
+		</tr>
+		<tr>
+			<td>Location</td>
+			<td>
+				<select name="ddlLoc">
+					<option value="-1">Select Loc</option>
+					<option value="Hyderabad">Hyderabad</option>
+					<option value="Bangalore">Bangalore</option>
+				</select>
+			</td>
+		</tr>	
+		<tr>
+			<td><input type="submit"  value="Register" /></td>
+			<td><input type="reset"  value="Clear All" /></td>
+		</tr>	
+	</table>
+</form>
+</body>
+</html>
